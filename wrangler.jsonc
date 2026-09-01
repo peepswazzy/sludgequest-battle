@@ -12,28 +12,16 @@
     ]
   },
   "exports": {
-
-  "BattleRoom": {
-
-    "type": "durable-object",
-
-    "storage": "sqlite"
-
-  }
-
-},
-
-"observability": {
-
-  "enabled": true,
-
-  "logs": {
-
+    "BattleRoom": {
+      "type": "durable-object",
+      "storage": "sqlite"
+    }
+  },
+  "observability": {
     "enabled": true,
-
-    "invocation_logs": true
-
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true
+    }
   }
-
-}
 }
