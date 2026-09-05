@@ -995,7 +995,8 @@ export default {
         "nighttime_wastewater_treatment_channel.png",
         "nighttime_wastewater_treatment_plant.png",
         "nighttime_water_treatment_clarifier.png",
-        "industrial_centrifuge_processing_plant.png"
+        "industrial_centrifuge_processing_plant.png",
+        "2E5724D3-A981-4976-9757-97EE50F0B432.png"
       ]);
       const file = url.pathname.split("/").pop();
       if (!allowed.has(file)) return new Response("Not found", { status: 404 });
