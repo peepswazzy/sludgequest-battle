@@ -394,7 +394,6 @@ grit:"/assets/equipment/2E5724D3-A981-4976-9757-97EE50F0B432.png",
 influent:"/assets/equipment/nighttime_wastewater_treatment_channel.png",
 plant:"/assets/equipment/nighttime_wastewater_treatment_plant.png",
 primary:"/assets/equipment/21E80AA4-AD1A-4029-9496-906ACFBD9EC7.png",
-sludgepump:"/assets/equipment/3C9BD933-5506-4496-AB13-8A200F5221A3.png",
 aeration:"/assets/equipment/nighttime_wastewater_treatment_plant.png",
 secondary:"/assets/equipment/nighttime_water_treatment_clarifier.png",
 centrifuge:"/assets/equipment/industrial_centrifuge_processing_plant.png"
@@ -458,7 +457,7 @@ pump:["Adds energy to move wastewater or sludge through piping.","Flow, amps, vi
 analyzer:["Measures process values such as DO, ammonia, pH, or residual.","Operators need trustworthy measurements before making process changes.","Verify unusual readings with another check."],
 trend:["Shows how process values change over time.","Trends help operators see direction, rate of change, and relationships between processes.","One number is a clue; the trend tells the story."]
 };
-function traineeVisualCard(key,hero=false){let m=traineeVisualMeta[key]||[key,"Training equipment"],d=traineeVisualDetails[key]||[m[1],"Knowing the equipment helps you connect the process to the real plant.","Learn what it does before worrying about the advanced controls."],src=traineeAssetMap[key],isPoster=key==='primary'||key==='sludgepump',visual=src?'<img src="'+src+'" alt="'+escapeHtml(m[0])+'" loading="lazy" decoding="async">':traineeSvg(key);return '<div class="trainee-visual-card'+(hero?' trainee-hero':'')+(isPoster?' trainee-poster':'')+'">'+visual+'<div class="trainee-visual-caption">'+escapeHtml(m[0])+'</div><span class="trainee-visual-note">'+escapeHtml(m[1])+'</span>'+((hero&&!isPoster)?'<div class="trainee-info"><div class="trainee-info-row"><span class="trainee-info-icon">✅</span><div><b>What it does:</b> '+escapeHtml(d[0])+'</div></div><div class="trainee-info-row"><span class="trainee-info-icon">🛡️</span><div><b>Why it matters:</b> '+escapeHtml(d[1])+'</div></div><div class="trainee-info-row"><span class="trainee-info-icon">⭐</span><div><b>Key point:</b> '+escapeHtml(d[2])+'</div></div></div>':'')+'</div>'}
+function traineeVisualCard(key,hero=false){let m=traineeVisualMeta[key]||[key,"Training equipment"],d=traineeVisualDetails[key]||[m[1],"Knowing the equipment helps you connect the process to the real plant.","Learn what it does before worrying about the advanced controls."],src=traineeAssetMap[key],isPoster=key==='primary'||key==='grit',visual=src?'<img src="'+src+'" alt="'+escapeHtml(m[0])+'" loading="lazy" decoding="async">':traineeSvg(key);return '<div class="trainee-visual-card'+(hero?' trainee-hero':'')+(isPoster?' trainee-poster':'')+'">'+visual+'<div class="trainee-visual-caption">'+escapeHtml(m[0])+'</div><span class="trainee-visual-note">'+escapeHtml(m[1])+'</span>'+((hero&&!isPoster)?'<div class="trainee-info"><div class="trainee-info-row"><span class="trainee-info-icon">✅</span><div><b>What it does:</b> '+escapeHtml(d[0])+'</div></div><div class="trainee-info-row"><span class="trainee-info-icon">🛡️</span><div><b>Why it matters:</b> '+escapeHtml(d[1])+'</div></div><div class="trainee-info-row"><span class="trainee-info-icon">⭐</span><div><b>Key point:</b> '+escapeHtml(d[2])+'</div></div></div>':'')+'</div>'}
 function renderTraineeVisuals(lesson){let map=traineeVisualMap[lesson.key]||{lesson:[],quiz:[]},keys=map.lesson||[];if(!keys.length){$("traineeVisuals").innerHTML="";return}$("traineeVisuals").innerHTML=traineeVisualCard(keys[0],true)+(keys.length>1?keys.slice(1).map(k=>traineeVisualCard(k,false)).join(""):"")}
 function renderTraineeQuestionVisual(lesson,index){let map=traineeVisualMap[lesson.key]||{quiz:[]},key=map.quiz[index]||map.lesson?.[0]||"plant";$("traineeQuestionVisual").innerHTML='<span class="trainee-look">👀 LOOK AT DA EQUIPMENT</span>'+traineeVisualCard(key,true)}
 const traineeLessons=[
@@ -998,9 +997,7 @@ export default {
         "nighttime_wastewater_treatment_plant.png",
         "nighttime_water_treatment_clarifier.png",
         "industrial_centrifuge_processing_plant.png",
-        "2E5724D3-A981-4976-9757-97EE50F0B432.png",
-        "21E80AA4-AD1A-4029-9496-906ACFBD9EC7.png",
-        "3C9BD933-5506-4496-AB13-8A200F5221A3.png"
+        "2E5724D3-A981-4976-9757-97EE50F0B432.png"
       ]);
       const file = url.pathname.split("/").pop();
       if (!allowed.has(file)) return new Response("Not found", { status: 404 });
