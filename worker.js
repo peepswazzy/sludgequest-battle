@@ -391,6 +391,7 @@ const traineeAssetMap={
 sewer:"/assets/equipment/industrial_night_sewer_cutaway.png",
 screen:"/assets/equipment/nighttime_wastewater_screening_station.png",
 grit:"/assets/equipment/2E5724D3-A981-4976-9757-97EE50F0B432.png",
+primary:"/assets/equipment/21E80AA4-AD1A-4029-9496-906ACFBD9EC7.png",
 influent:"/assets/equipment/nighttime_wastewater_treatment_channel.png",
 plant:"/assets/equipment/nighttime_wastewater_treatment_plant.png",
 aeration:"/assets/equipment/nighttime_wastewater_treatment_plant.png",
@@ -996,7 +997,8 @@ export default {
         "nighttime_wastewater_treatment_plant.png",
         "nighttime_water_treatment_clarifier.png",
         "industrial_centrifuge_processing_plant.png",
-        "2E5724D3-A981-4976-9757-97EE50F0B432.png"
+        "2E5724D3-A981-4976-9757-97EE50F0B432.png",
+        "21E80AA4-AD1A-4029-9496-906ACFBD9EC7.png"
       ]);
       const file = url.pathname.split("/").pop();
       if (!allowed.has(file)) return new Response("Not found", { status: 404 });
